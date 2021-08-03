@@ -8,7 +8,7 @@ public class Pilha {
         this.refNoEntradaPilha = null;
     }
     /* O metodo isEmpty retorna se a pilha está vazia ou não:
-    *     - Sabemos que a pilha está vazia chegando se a referência de entrada da pilha está nula */
+    *     - Sabemos que a pilha está vazia checando se a referência de entrada da pilha está nula */
     public Boolean isEmpty(){
         return this.refNoEntradaPilha == null;
     }
