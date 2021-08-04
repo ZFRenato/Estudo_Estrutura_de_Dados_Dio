@@ -1,13 +1,13 @@
 package one.digitalinnovation;
 
-public class No {
-    private Object object; // Conteudo
-    private No refNo;
+public class No<T> {
+    private T object; // Conteudo
+    private No<T> refNo;
 
     public No(){
 
     }
-    public No( Object object){
+    public No( T object){
         this.object = object;
         this.refNo = null;
     }
@@ -16,15 +16,15 @@ public class No {
         return object;
     }
 
-    public void setObject(Object object) {
+    public void setObject(T object) {
         this.object = object;
     }
 
-    public No getRefNo() {
+    public No<T> getRefNo() {
         return refNo;
     }
 
-    public void setRefNo(No refNo) {
+    public void setRefNo(No<T> refNo) {
         this.refNo = refNo;
     }
 

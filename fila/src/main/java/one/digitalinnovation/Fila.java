@@ -1,7 +1,7 @@
 package one.digitalinnovation;
 
-public class Fila {
-    private No refNoDeEntrada;
+public class Fila<T> {
+    private No<T> refNoDeEntrada;
 
     public Fila() {
         this.refNoDeEntrada = null;
@@ -11,15 +11,15 @@ public class Fila {
         return this.refNoDeEntrada == null;
     }
 
-    public void enqueue(Object object){
-      No novoNo = new No(object);
+    public void enqueue(T object){
+      No<T> novoNo = new No<>(object);
       novoNo.setRefNo(this.refNoDeEntrada);
       this.refNoDeEntrada = novoNo;
     }
 
-    public Object first(){
+    public T first(){
         if(!this.isEmpty()){
-            No primeiroNo = refNoDeEntrada;
+            No<T> primeiroNo = refNoDeEntrada;
             while (true){
                 if (primeiroNo.getRefNo() != null){
                     primeiroNo = primeiroNo.getRefNo();
@@ -27,11 +27,11 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo.getObject();
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
-    public Object dequeue(){
+    public T dequeue(){
         if(!this.isEmpty()){
             No primeiroNo = refNoDeEntrada;
             No noAuxiliar = refNoDeEntrada;
@@ -44,7 +44,7 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo.getObject();
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
