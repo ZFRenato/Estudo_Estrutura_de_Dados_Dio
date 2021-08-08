@@ -40,8 +40,31 @@ public class ListaCircular<T> {
         return this.getNo(index).getConteudo();
     }
 
+    public void remove(int index){
+        if(index >= this.size())
+            throw new IndexOutOfBoundsException("Índice excede o tamanho da lista Circular!!");
 
+        No<T> noAuxiliar = this.cauda;
 
+        if(index == 0){
+            this.cauda = this.cauda.getNoProximo();
+            this.cabeca.setNoProximo(this.cauda);
+        }else if(index == 1){
+            this.cauda.setNoProximo(this.cauda.getNoProximo().getNoProximo());
+        }else{
+
+            for (int i = 0; i < index -1 ; i++) {
+                noAuxiliar = noAuxiliar.getNoProximo();
+            }
+            // Paramos um elemento antes do que desejamos retirar
+            // Apontamos a refrência do proximo elemento do elemento anterior para o elemento logo a frente após o que removemos
+
+            noAuxiliar.setNoProximo(noAuxiliar.getNoProximo().getNoProximo());
+        }
+
+        this.tamanhoLista --;
+
+    }
 
 
 }
