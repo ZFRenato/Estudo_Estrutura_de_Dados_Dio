@@ -8,6 +8,8 @@ public class ListaCircular<T> {
 
     public ListaCircular(){
         this.tamanhoLista = 0;
+        this.cabeca = null;
+        this.cauda = null;
     }
 
     // Metodos
@@ -64,6 +66,21 @@ public class ListaCircular<T> {
 
         this.tamanhoLista --;
 
+    }
+
+    public void add(T conteudo){
+        No<T> novoNo = new No<>(conteudo);
+        if (this.isEmpty()){
+            this.cauda = novoNo;
+            this.cabeca = this.cauda;
+            novoNo.setNoProximo(novoNo);
+        }else{
+            novoNo.setNoProximo(this.cauda);
+            this.cauda = novoNo;
+            this.cabeca.setNoProximo(this.cauda);
+        }
+
+        this.tamanhoLista ++;
     }
 
 
