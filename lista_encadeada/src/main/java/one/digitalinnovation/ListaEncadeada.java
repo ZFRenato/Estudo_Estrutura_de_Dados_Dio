@@ -39,9 +39,9 @@ public class ListaEncadeada<T> {
             return;
         }
 
-        No<T> noAuxiliar = refEntrada;
+        No<T> noAuxiliar = this.refEntrada;
 
-        for (int i = 0; i < this.size() ; i++) {
+        for (int i = 0; i < this.size() -1 ; i++) {
             noAuxiliar = noAuxiliar.getProximoNo();
         }
 
@@ -53,7 +53,7 @@ public class ListaEncadeada<T> {
         No<T> noAuxiliar = this.refEntrada;
         No<T> noRetorno = null;
 
-        for (int i = 0; i >= index ; i++) {
+        for (int i = 0; i <= index ; i++) {
             noRetorno = noAuxiliar;
             noAuxiliar = noAuxiliar.getProximoNo();
         }
