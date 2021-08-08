@@ -31,7 +31,7 @@ public class ListaCircular<T> {
         }
 
         No<T> noAuxiliar = this.cauda;
-        for (int i = 0; (i < index) && (noAuxiliar != null) ; i++) {
+        for (int i = 0; (i < index)/*&& (noAuxiliar != null) */; i++) {
             noAuxiliar = noAuxiliar.getNoProximo();
         }
 
