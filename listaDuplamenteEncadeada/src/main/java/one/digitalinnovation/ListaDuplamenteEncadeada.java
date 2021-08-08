@@ -31,6 +31,22 @@ public class ListaDuplamenteEncadeada<T> {
         return this.getNo(index).getConteudo();
     }
 
+    private void add(T elemento){
+        NoDuplo<T> novoNo = new NoDuplo<>(elemento);
+        novoNo.setNoProximo(null);
+        novoNo.setNoPrevio(this.refUltimoNoEntrada);
+
+        if(this.refPrimeiroNoEntrada == null){
+            this.refPrimeiroNoEntrada = novoNo;
+        }
+        if(this.refUltimoNoEntrada != null){
+            this.refUltimoNoEntrada.setNoProximo(novoNo);
+        }
+
+        this.refUltimoNoEntrada = novoNo;
+        this.tamanhoNo ++;
+    }
+
 
 
 
