@@ -89,10 +89,22 @@ public class ListaDuplamenteEncadeada<T> {
 
     }
 
+    @Override
+    public String toString() {
 
+        String str = "";
 
+        NoDuplo<T> noAuxiliar = this.refPrimeiroNoEntrada;
 
+        str+= "null <--";
 
+        for (int i = 0; i < this.size() ; i++) {
+            str += "[No{conteudo: " +noAuxiliar.getConteudo() + "}] -->";
+            noAuxiliar = noAuxiliar.getNoProximo();
+        }
 
+        str+=" null";
 
+        return str;
+    }
 }
